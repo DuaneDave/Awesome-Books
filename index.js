@@ -1,32 +1,35 @@
 const shelve = document.querySelector('#book-shelve');
 const form = document.querySelector('form');
-const btnAddBook = document.querySelector('#add-book');
 const bookInput = document.querySelector('#book-name');
 const authorInput = document.querySelector('#author-name');
 
-let bookShelve = [];
+const bookShelve = [];
+
+function storeShelve() {
+  localStorage.setItem('books', JSON.stringify(bookShelve));
+}
 
 function createBook(book, author) {
-  let newBook = {
+  const newBook = {
     bookName: book,
-    author: author,
+    author,
   };
   bookShelve.push(newBook);
 
-  let mybook = document.createElement('div');
+  const mybook = document.createElement('div');
   bookShelve.forEach((book, idx) => {
     mybook.innerHTML = `<div class="book">
       <h3>${book.bookName}</h3>
       <p>${book.author}</p>
-      <button class="delete" class="delete">Delete</button>
-      </div>`;
+      <button class="delete" class="delete">Remove</button>
+      </div>
+      <hr>`;
 
     const deleteBtn = mybook.querySelector('.delete');
     deleteBtn.addEventListener('click', () => {
       bookShelve.splice(idx, 1);
       mybook.remove();
       storeShelve();
-      console.log(idx);
     });
   });
 
@@ -45,12 +48,8 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-function storeShelve() {
-  localStorage.setItem('books', JSON.stringify(bookShelve));
-}
-
 function retrieveShelve() {
-  let books = JSON.parse(localStorage.getItem('books'));
+  const books = JSON.parse(localStorage.getItem('books'));
   if (books) {
     books.forEach((book) => {
       createBook(book.bookName, book.author);

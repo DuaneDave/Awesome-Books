@@ -45,3 +45,16 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+function storeShelve() {
+  localStorage.setItem('books', JSON.stringify(bookShelve));
+}
+
+function retrieveShelve() {
+  let books = JSON.parse(localStorage.getItem('books'));
+  if (books) {
+    books.forEach((book) => {
+      createBook(book.bookName, book.author);
+    });
+  }
+}
+retrieveShelve();

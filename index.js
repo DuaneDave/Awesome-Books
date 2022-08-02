@@ -32,18 +32,18 @@ class DisplayBook {
     forLs.push(newBook);
   }
 
-  //delete function
+  // delete function
   static deleteBook(index) {
     forLs.splice(index, 1);
     DisplayBook.setLs();
   }
 
-  //set local storage
+  // set local storage
   static setLs() {
     localStorage.setItem('books', JSON.stringify(forLs));
   }
 
-  //fetch local storage
+  // fetch local storage
   static getLs() {
     if (localStorage.getItem('books')) {
       const books = JSON.parse(localStorage.getItem('books'));
@@ -55,7 +55,7 @@ class DisplayBook {
       localStorage.setItem('books', JSON.stringify(forLs));
     }
     const deleteBtn = document.querySelectorAll('.delete');
-    deleteBtn.forEach((btn, index) => {
+    deleteBtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const index = e.target.dataset.remove;
         DisplayBook.deleteBook(index);

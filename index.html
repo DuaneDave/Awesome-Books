@@ -4,21 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Awesome Books</title>
   </head>
   <body>
-    <h1>Awesome books</h1>
-    <section id="book-shelve">
+    <header>
+      <h1>Awesome books</h1>
+    </header>
 
+    <section class="book-shelve flex" id="book-shelve">
+      <div class="book flex">
+        <div class="book-details">
+          <h3>The Gods are not be Blamed</h3>
+          <p>Wole shoyinka</p>
+        </div>
+        <button class="delete" class="delete">Delete</button>
+      </div>
+      <div class="book flex">
+        <div class="book-details">
+          <h3>The Gods are not be Blamed</h3>
+          <p>Wole shoyinka</p>
+        </div>
+        <button class="delete" class="delete">Delete</button>
+      </div>
+      <div class="book flex">
+        <div class="book-details">
+          <h3>The Gods are not be Blamed</h3>
+          <p>Wole shoyinka</p>
+        </div>
+        <button class="delete" class="delete">Delete</button>
+      </div>
     </section>
 
-    <section>
-      <form>
-        <input type="text" placeholder="Enter Book Name" id="book-name" />
-        <input type="text" placeholder="Enter Author Name" id="author-name" />
-        <button type="submit" id="add-book">Add</button>
+    <section class="form">
+      <form class="flex">
+        <div class="input flex">
+          <input type="text" placeholder="Enter Book Name" id="book-name" />
+          <input type="text" placeholder="Enter Author Name" id="author-name" />
+        </div>
+        <button class="btn" type="submit" id="add-book">Add</button>
       </form>
     </section>
+
     <script src="index.js"></script>
   </body>
 </html>

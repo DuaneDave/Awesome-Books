@@ -1,4 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Sora:wght@300;400;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(31, 26, 26);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Sora', sans-serif;
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.212);
+  margin-bottom: 1rem;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.book-shelve {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.384);
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid rgba(216, 207, 207, 0.575);
+}
+
+.book {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.603);
+  color: white;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.63);
+}
+
+.book-details h3 {
+  color: #ec5242;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.book-details p {
+  color: rgba(255, 255, 255, 0.788);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.book button {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.753);
+  color: rgba(255, 255, 255, 0.822);
+  padding: 0.5em 2em;
+  box-shadow: 5px 7px 10px black;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.5s ease;
+}
+
+.form {
+  width: 100%;
+  max-width: 700px;
+}
+
+form {
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  padding: 2em;
+}
+
+form input {
+  padding: 1em 1.5em;
+  border-radius: 15px;
+  font-family: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.767);
+  background-color: rgba(27, 26, 26, 0.192);
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+}
+
+form input:focus {
+  border: 1px solid #ec5242;
+  transform: scale(1.02);
+}
+
+form .btn {
+  background-color: rgba(0, 0, 0, 0.466);
+  border: 1px solid #ec5242;
+  padding: 0.8em 5em;
+  align-self: center;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.input {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background-color: #ec5242;
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    flex-direction: row;
+  }
 }

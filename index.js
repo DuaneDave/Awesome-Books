@@ -1,59 +1,98 @@
-const shelve = document.querySelector('#book-shelve');
-const form = document.querySelector('form');
-const bookInput = document.querySelector('#book-name');
-const authorInput = document.querySelector('#author-name');
-
-const bookShelve = [];
-
-function storeShelve() {
-  localStorage.setItem('books', JSON.stringify(bookShelve));
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 }
 
-function createBook(book, author) {
-  const newBook = {
-    bookName: book,
-    author,
-  };
-  bookShelve.push(newBook);
+const forLs = [];
 
-  const mybook = document.createElement('div');
-  bookShelve.forEach((book, idx) => {
-    mybook.innerHTML = `<div class="book">
-      <h3>${book.bookName}</h3>
-      <p>${book.author}</p>
-      <button class="delete" class="delete">Remove</button>
-      </div>
-      <hr>`;
+/* eslint max-classes-per-file: ["error", 2] */
 
-    const deleteBtn = mybook.querySelector('.delete');
-    deleteBtn.addEventListener('click', () => {
-      bookShelve.splice(idx, 1);
-      mybook.remove();
-      storeShelve();
+class DisplayBook {
+  static addBook(newBook, index) {
+    const library = document.querySelector('#book-shelve');
+    if (!localStorage.getItem('books')) {
+      const noBook = document.createElement('p');
+      noBook.innerHTML = 'No books in library';
+      library.appendChild(noBook);
+    }
+    const container = document.createElement('div');
+    container.classList.add('book');
+    container.classList.add('flex');
+    container.innerHTML = `
+    <div class="book-details">
+     <h3>${newBook.title}</h3>
+     <p>${newBook.author}</p>
+    </div>
+     <button class="delete" data-remove=${index}>Delete</button>
+     `;
+    library.appendChild(container);
+
+    forLs.push(newBook);
+  }
+
+  // delete function
+  static deleteBook(index) {
+    forLs.splice(index, 1);
+    DisplayBook.setLs();
+  }
+
+  // set local storage
+  static setLs() {
+    localStorage.setItem('books', JSON.stringify(forLs));
+  }
+
+  // fetch local storage
+  static getLs() {
+    if (localStorage.getItem('books')) {
+      const books = JSON.parse(localStorage.getItem('books'));
+      books.forEach((book, index) => {
+        const newBook = new Book(book.title, book.author);
+        DisplayBook.addBook(newBook, index);
+      });
+    } else {
+      localStorage.setItem('books', JSON.stringify(forLs));
+    }
+    const deleteBtn = document.querySelectorAll('.delete');
+    deleteBtn.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const index = e.target.dataset.remove;
+        DisplayBook.deleteBook(index);
+        DisplayBook.setLs();
+        e.target.parentElement.remove();
+      });
     });
-  });
-
-  storeShelve();
-
-  shelve.appendChild(mybook);
+  }
 }
+
+const form = document.querySelector('#form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (bookInput.value !== '' && authorInput.value !== '') {
-    createBook(bookInput.value, authorInput.value);
+  const title = document.querySelector('#book-name').value;
+  const author = document.querySelector('#author-name').value;
 
-    bookInput.value = '';
-    authorInput.value = '';
+  if (title !== '' && author !== '') {
+    const newBook = new Book(title, author);
+    DisplayBook.addBook(newBook);
+
+    DisplayBook.setLs(newBook);
+
+    document.querySelector('#book-name').value = '';
+    document.querySelector('#author-name').value = '';
+
+    document.querySelector('#book-name').focus();
   }
+
+  const deleteBtn = document.querySelectorAll('.delete');
+  deleteBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const index = e.target.dataset.remove;
+      DisplayBook.deleteBook(index);
+      e.target.parentElement.remove();
+    });
+  });
 });
 
-function retrieveShelve() {
-  const books = JSON.parse(localStorage.getItem('books'));
-  if (books) {
-    books.forEach((book) => {
-      createBook(book.bookName, book.author);
-    });
-  }
-}
-retrieveShelve();
+DisplayBook.getLs();

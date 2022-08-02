@@ -32,10 +32,18 @@ class DisplayBook {
     forLs.push(newBook);
   }
 
+  //delete function
+  static deleteBook(index) {
+    forLs.splice(index, 1);
+    DisplayBook.setLs();
+  }
+
+  //set local storage
   static setLs() {
     localStorage.setItem('books', JSON.stringify(forLs));
   }
 
+  //fetch local storage
   static getLs() {
     if (localStorage.getItem('books')) {
       const books = JSON.parse(localStorage.getItem('books'));
@@ -47,19 +55,14 @@ class DisplayBook {
       localStorage.setItem('books', JSON.stringify(forLs));
     }
     const deleteBtn = document.querySelectorAll('.delete');
-    deleteBtn.forEach((btn) => {
+    deleteBtn.forEach((btn, index) => {
       btn.addEventListener('click', (e) => {
         const index = e.target.dataset.remove;
-        forLs.splice(index, 1);
+        DisplayBook.deleteBook(index);
         DisplayBook.setLs();
         e.target.parentElement.remove();
       });
     });
-  }
-
-  static deleteBook(index) {
-    forLs.splice(index, 1);
-    DisplayBook.setLs();
   }
 }
 
@@ -86,8 +89,7 @@ form.addEventListener('submit', (e) => {
   deleteBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const index = e.target.dataset.remove;
-      forLs.splice(index, 1);
-      DisplayBook.setLs();
+      DisplayBook.deleteBook(index);
       e.target.parentElement.remove();
     });
   });

@@ -16,23 +16,24 @@
       <a class="logo" href="#">Awesome<span class="block">Books</span></a>
       <nav>
         <ul class="nav-menu flex">
-          <li class="nav-items" id="list"><a href="#">List</a></li>
+          <li class="nav-items" id="list"><a class="active" href="#">List</a></li>
           <li class="nav-items" id="add-book"><a href="#">Add new</a></li>
           <li class="nav-items" id="contact"><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <div class="date">August 3rd 2022, 10:00AM</div>
     </header>
 
     <main>
       <section class="shelve flex" id="home">
-        <h1 class="heading">Awesome Books</h1>
+        <h1 class="heading">All Awesome Books</h1>
         <div class="book-shelve flex" id="book-shelve"></div>
       </section>
 
       <section class="contact hide">
         <div class="details flex">
           <div class="caption flex">
-            <h2>Contact information</h2>
+            <h1 class="heading">Contact information</h1>
           </div>
           <p>
             Do have any questions or you just want to say hello? You can reach
@@ -48,6 +49,7 @@
       </section>
 
       <section class="form flex hide">
+        <h1 class="heading">Add a New Book </h1>
         <form class="flex" id="form">
           <div class="input flex">
             <input type="text" placeholder="Enter Book Name" id="book-name" />

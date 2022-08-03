@@ -15,7 +15,7 @@ body {
 }
 
 .active {
-  color: #ec5242;
+  color: #ec5342ee;
 }
 
 .flex {
@@ -30,7 +30,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.705);
 }
 
 ul li {
@@ -91,11 +91,10 @@ header {
   align-items: center;
 }
 
-.nav-items {
+.nav-items a {
   margin-left: 1rem;
   font-size: 1rem;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.705);
 }
 
 .shelve {
@@ -188,7 +187,7 @@ header {
   justify-content: center;
   font-size: 1.2rem;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .caption .heading {
@@ -219,10 +218,13 @@ header {
   flex-direction: column;
 }
 
+.form .heading {
+  margin-bottom: 1rem;
+}
+
 form {
   flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
   width: 100%;
   padding: 2em;
 }
@@ -320,7 +322,7 @@ button:hover {
   .input {
     flex-direction: row;
   }
-  .details{
+  .details {
     font-size: 1.5rem;
   }
 }

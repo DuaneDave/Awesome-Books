@@ -135,8 +135,12 @@ window.addEventListener('scroll', () => {
   }
 });
 
-
-
-
+const linkAction = document.querySelectorAll('.nav-link');
+linkAction.forEach((link) => {
+  link.addEventListener('click', () => {
+    linkAction.forEach((link) => link.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
 
 DisplayBook.getLs();

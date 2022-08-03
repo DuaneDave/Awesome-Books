@@ -97,7 +97,7 @@ form.addEventListener('submit', (e) => {
 
 // buttons
 const listBtn = document.querySelector('#list');
-const addBookBtn = document.querySelector('#add-book');
+const addBookBtn = document.querySelector('#add-new');
 const contactBtn = document.querySelector('#contact');
 
 // sections

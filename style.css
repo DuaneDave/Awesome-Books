@@ -322,6 +322,7 @@ button:hover {
   .input {
     flex-direction: row;
   }
+
   .details {
     font-size: 1.5rem;
   }

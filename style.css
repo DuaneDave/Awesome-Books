@@ -14,6 +14,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.active {
+  color: #ec5242;
+}
+
 .flex {
   display: flex;
 }
@@ -51,6 +55,15 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.date {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.509);
+  bottom: -4rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .hide {
@@ -150,10 +163,13 @@ header {
 
 .contact p {
   text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.7;
 }
 
 .details {
-  background-color: white;
+  background-color: rgb(31, 26, 26);
+  color: rgba(255, 255, 255, 0.663);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -175,11 +191,12 @@ header {
   margin-bottom: 3rem;
 }
 
-.caption h2 {
+.caption .heading {
   position: relative;
+  margin-bottom: 1rem;
 }
 
-.caption h2::after {
+.caption .heading::after {
   content: '';
   position: absolute;
   bottom: -1rem;
@@ -189,11 +206,17 @@ header {
   background-color: #ec5242;
 }
 
+.info {
+  font-size: 1.05rem;
+}
+
 .form {
   width: 100%;
   max-width: 700px;
   height: 100vh;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 form {
@@ -286,11 +309,18 @@ button:hover {
     padding: 2em 9em;
   }
 
+  .date {
+    right: 9rem;
+  }
+
   .heading {
     font-size: 3.5rem;
   }
 
   .input {
     flex-direction: row;
+  }
+  .details{
+    font-size: 1.5rem;
   }
 }

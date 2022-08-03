@@ -6,14 +6,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: rgb(31, 26, 26);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+}
+
+.active {
+  color: #ec5342ee;
 }
 
 .flex {
@@ -26,20 +28,89 @@ h3 {
   font-family: 'Sora', sans-serif;
 }
 
-h1 {
-  color: rgba(255, 255, 255, 0.212);
-  margin-bottom: 1rem;
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.705);
+}
+
+ul li {
+  list-style-type: none;
+}
+
+main {
+  background-color: rgb(31, 26, 26);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header {
+  background-color: rgba(0, 0, 0, 0.61);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  text-align: center;
+  padding: 1.3em 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.date {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.509);
+  bottom: -4rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hide {
+  display: none;
+}
+
+.logo {
+  color: rgba(255, 255, 255, 0.705);
   font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.block {
+  color: #ec5342f6;
+}
+
+.heading {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.356);
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+
+.nav-menu {
+  align-items: center;
+}
+
+.nav-items a {
+  margin-left: 1rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.shelve {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2em;
+  align-items: center;
+  min-height: 100vh;
+  max-height: max-content;
 }
 
 .book-shelve {
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   background-color: rgba(0, 0, 0, 0.384);
   max-width: 700px;
@@ -58,7 +129,7 @@ header {
   color: white;
   padding: 1em;
   border-radius: 15px;
-  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.63);
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.753);
 }
 
 .book-details h3 {
@@ -85,15 +156,75 @@ header {
   transition: 0.5s ease;
 }
 
+.contact {
+  width: 100%;
+}
+
+.contact p {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+.details {
+  background-color: rgb(31, 26, 26);
+  color: rgba(255, 255, 255, 0.663);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  gap: 1.5rem;
+  height: 100vh;
+}
+
+.details ul li {
+  margin-bottom: 0.7rem;
+  list-style-type: disc;
+}
+
+.caption {
+  width: 100%;
+  justify-content: center;
+  font-size: 1.2rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.caption .heading {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.caption .heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 30%;
+  width: 40%;
+  height: 2px;
+  background-color: #ec5242;
+}
+
+.info {
+  font-size: 1.05rem;
+}
+
 .form {
   width: 100%;
   max-width: 700px;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form .heading {
+  margin-bottom: 1rem;
 }
 
 form {
   flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
   width: 100%;
   padding: 2em;
 }
@@ -135,8 +266,64 @@ button:hover {
   background-color: #ec5242;
 }
 
+.footer {
+  background-color: rgba(0, 0, 0, 0.952);
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  padding: 1.5em 2em;
+}
+
+.footer .copy {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.808);
+}
+
+.footer ul li {
+  color: rgba(255, 255, 255, 0.479);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.scroll-to-top {
+  background-color: #e7200a;
+  position: fixed;
+  border-radius: 10px;
+  bottom: 4rem;
+  right: 5%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.scroll-to-top.fade {
+  display: block;
+}
+
+.scroll-to-top a i {
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 768px) {
+  header {
+    padding: 2em 9em;
+  }
+
+  .date {
+    right: 9rem;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
   .input {
     flex-direction: row;
+  }
+
+  .details {
+    font-size: 1.5rem;
   }
 }

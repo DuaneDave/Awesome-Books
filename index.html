@@ -5,24 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>Awesome Books</title>
   </head>
   <body>
-    <header>
-      <h1>Awesome books</h1>
+    <header class="flex">
+      <a class="logo" href="#">Awesome<span class="block">Books</span></a>
+      <nav>
+        <ul class="nav-menu flex">
+          <li class="nav-items" id="list">
+            <a class="nav-link active" href="#">List</a>
+          </li>
+          <li class="nav-items" id="add-new">
+            <a class="nav-link" href="#">Add new</a>
+          </li>
+          <li class="nav-items" id="contact">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="date">August 3rd 2022, 10:00AM</div>
     </header>
 
-    <section class="book-shelve flex" id="book-shelve"></section>
+    <main>
+      <section class="shelve flex" id="home">
+        <h1 class="heading">All Awesome Books</h1>
+        <div class="book-shelve flex" id="book-shelve"></div>
+      </section>
 
-    <section class="form">
-      <form class="flex" id="form">
-        <div class="input flex">
-          <input type="text" placeholder="Enter Book Name" id="book-name" />
-          <input type="text" placeholder="Enter Author Name" id="author-name" />
+      <section class="contact hide">
+        <div class="details flex">
+          <div class="caption flex">
+            <h1 class="heading">Contact information</h1>
+          </div>
+          <p>
+            Do have any questions or you just want to say hello? You can reach
+            out to us!
+          </p>
+
+          <ul class="info">
+            <li>Our e-mail: awesomebooks@gmail.com</li>
+            <li>Our phone number +91-123-4567-8910</li>
+            <li>Our address Brooks street Utopia, DreamLand</li>
+          </ul>
         </div>
-        <button class="btn" type="submit" id="add-book">Add</button>
-      </form>
-    </section>
+      </section>
+
+      <section class="form flex hide">
+        <h1 class="heading">Add a New Book</h1>
+        <form class="flex" id="form">
+          <div class="input flex">
+            <input type="text" placeholder="Enter Book Name" id="book-name" />
+            <input
+              type="text"
+              placeholder="Enter Author Name"
+              id="author-name"
+            />
+          </div>
+          <button class="btn" type="submit" id="add-book">Add</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer flex">
+      <p class="copy">
+        &COPY; Copyright 2022 Awesome<span class="block">Books</span>
+      </p>
+      <ul>
+        <li>awesomebooks@gmail.com</li>
+        <li>+91-123-4567-8910</li>
+      </ul>
+
+      <div class="scroll-to-top flex">
+        <a href="#home"><i class="bx bxs-chevron-up"></i></a>
+      </div>
+    </footer>
 
     <script src="index.js"></script>
   </body>

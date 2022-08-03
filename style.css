@@ -261,6 +261,26 @@ button:hover {
   line-height: 1.6;
 }
 
+.scroll-to-top {
+  background-color: #e7200a;
+  position: fixed;
+  border-radius: 10px;
+  bottom: 4rem;
+  right: 5%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.scroll-to-top.fade {
+  display: block;
+}
+
+.scroll-to-top a i {
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 768px) {
   header {
     padding: 2em 9em;

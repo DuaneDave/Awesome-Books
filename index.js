@@ -125,4 +125,13 @@ contactBtn.addEventListener('click', (e) => {
   addNewBook.classList.add('hide');
 });
 
+const scrollToTop = document.querySelector('.scroll-to-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    scrollToTop.classList.add('fade');
+  } else {
+    scrollToTop.classList.remove('fade');
+  }
+});
+
 DisplayBook.getLs();

@@ -95,12 +95,12 @@ form.addEventListener('submit', (e) => {
   });
 });
 
-//buttons
+// buttons
 const listBtn = document.querySelector('#list');
 const addBookBtn = document.querySelector('#add-book');
 const contactBtn = document.querySelector('#contact');
 
-//sections
+// sections
 const contact = document.querySelector('.contact');
 const bookList = document.querySelector('.shelve');
 const addNewBook = document.querySelector('.form');
@@ -113,6 +113,7 @@ listBtn.addEventListener('click', (e) => {
 });
 
 addBookBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   addNewBook.classList.remove('hide');
   contact.classList.add('hide');
   bookList.classList.add('hide');

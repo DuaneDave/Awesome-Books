@@ -4,15 +4,29 @@
 
 > This project is to build a book library, that has functionality to Creates, Update and Delete (CRUD) books. Local storage was used in other to preserve user activities on this page
 
+![screenshot](./asset/img1.png)
+![screenshot](./asset/img2.png)
+
 ## Built With
 
 - HTML
+- CSS
 - Javascript
 
 ## To get a local copy up and running follow these simple example steps.
 
 - Clone this repo to your machine by using Git clone: Git clone https://github.com/DuaneDave/Awesome-Books.git
 - open in your vs code terminal and run live server
+
+### Run the following tests:
+
+- `npx hint .`
+- `npx stylelint "\*_/_.{css,scss}"`
+- `npx eslint .`
+
+### LIVE DEMO
+
+Check the live demo here [LINK](https://duanedave.github.io/Awesome-Books/)
 
 ## Authors
 

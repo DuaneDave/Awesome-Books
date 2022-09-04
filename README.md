@@ -6,6 +6,7 @@
 ![screenshot](./asset/img2.png)
 
 ## Built With
+
 - HTML
 - CSS
 - Javascript
@@ -20,6 +21,10 @@
 - `npx hint .`
 - `npx stylelint "\*_/_.{css,scss}"`
 - `npx eslint .`
+
+### LIVE DEMO
+
+Check the live demo here [LINK](https://duanedave.github.io/Awesome-Books/)
 
 ## Authors
 
